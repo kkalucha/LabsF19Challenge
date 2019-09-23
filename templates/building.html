@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>This is how full {{ building|e }} is:</h1>
+        <ul>
+            {% for router, percent in routers.items() %}
+            <p>{{ router|e }} is {{ percent|e }}% full currently.</p>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

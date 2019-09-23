@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>The {{ number|e }} least crowded buildings on campus:</h1>
+        <ul>
+            {% for building, percent in buildings.items() %}
+            <p>{{ building|e }} is {{ percent|e }}% full currently.</p>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
