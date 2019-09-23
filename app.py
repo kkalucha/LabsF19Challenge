@@ -13,9 +13,7 @@ def main():
 
 @app.route('/information/<int:query>')
 def show_min(query):
-    # data = {'butler': 34, 'lerner': 44, 'low': 12, 'law': 65, 'avery': 4, 'milstein': 0}
     building_nums = [125, 126, 127, 116, 117, 118, 119, 120, 121, 122, 98, 192, 155, 110, 111, 102, 103, 104, 105, 106, 107, 100, 96]
-    #building_nums = [125, 126, 127]
     auth = request.args.get('auth', '')
     data = {}
     for nums in building_nums:
@@ -42,11 +40,6 @@ def show_building(query):
         data.update({name:percent})
     sorted_dict = collections.OrderedDict(sorted(data.items(), key=operator.itemgetter(0)))
     return render_template('building.html', building = building, routers = sorted_dict)
-    
-@app.route('/testing/<string:name>')
-def test(name):
-    data = ['jane', 'alex', 'joe', 'max']
-    return render_template('testing.html', name = name, users = data)
 
 if __name__ == '__main__':
     app.run()
